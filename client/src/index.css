@@ -82,3 +82,13 @@ ul {
 .btn:hover {
   background: var(--dark);
 }
+
+.page {
+  padding: 48px 16px;
+  min-height: 50vh;
+}
+
+.page h1 {
+  color: var(--primary);
+  margin-bottom: 16px;
+}

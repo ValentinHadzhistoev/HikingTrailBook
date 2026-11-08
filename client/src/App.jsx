@@ -1,34 +1,32 @@
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import TrailCard from './components/TrailCard'
 import Footer from './components/Footer'
-
-// TEMPORARY sample data, replaced by API data later
-const sample = [1, 2, 3, 4].map((n) => ({
-  _id: String(n),
-  name: `Sample Trail ${n}`,
-  location: 'Rila, Bulgaria',
-  difficulty: 'Medium',
-  length: 10 + n,
-  imageUrl: `https://picsum.photos/seed/trail${n}/600/400`,
-}))
+import Home from './views/Home'
+import Catalog from './views/Catalog'
+import Details from './views/Details'
+import CreateTrail from './views/CreateTrail'
+import EditTrail from './views/EditTrail'
+import MyTrails from './views/MyTrails'
+import Login from './views/Login'
+import Register from './views/Register'
+import NotFound from './views/NotFound'
 
 export default function App() {
   return (
     <div className="app">
       <Navbar />
       <main>
-        <Hero />
-        <section className="section section-light">
-          <div className="container">
-            <h2 className="section-title">Latest Trails</h2>
-            <div className="card-grid">
-              {sample.map((trail) => (
-                <TrailCard key={trail._id} trail={trail} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/trails" element={<Catalog />} />
+          <Route path="/trails/create" element={<CreateTrail />} />
+          <Route path="/trails/:trailId" element={<Details />} />
+          <Route path="/trails/:trailId/edit" element={<EditTrail />} />
+          <Route path="/profile" element={<MyTrails />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
       <Footer />
     </div>

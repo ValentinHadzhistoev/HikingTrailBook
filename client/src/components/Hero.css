@@ -6,7 +6,7 @@
   text-align: center;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url('../assets/images/banner.jpg');
+    url('../assets/images/banner1-img.jpg');
   background-size: cover;
   background-position: center;
 }
