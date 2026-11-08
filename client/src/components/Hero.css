@@ -1,0 +1,30 @@
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 600px;
+  padding: 160px 0 100px;
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('../assets/images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-subtitle {
+  color: #fff;
+  font-size: clamp(1.1rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: clamp(2.2rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}

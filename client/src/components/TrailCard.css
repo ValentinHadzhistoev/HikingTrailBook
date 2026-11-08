@@ -1,0 +1,53 @@
+.trail-card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s;
+}
+
+.trail-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.trail-card-image {
+  overflow: hidden;
+}
+
+.trail-card-image img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.trail-card:hover .trail-card-image img {
+  transform: scale(1.05);
+}
+
+.trail-card-body {
+  padding: 24px;
+}
+
+.trail-card-meta {
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.trail-card-title {
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+.trail-card-title a:hover {
+  color: var(--primary);
+}
+
+.trail-card-location {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
