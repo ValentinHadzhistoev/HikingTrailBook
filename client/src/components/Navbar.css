@@ -77,3 +77,17 @@
     display: flex;
   }
 }
+
+.navbar-logout {
+  background: none;
+  border: none;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navbar-logout:hover {
+  color: #86efac;
+}
