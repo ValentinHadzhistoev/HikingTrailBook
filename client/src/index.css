@@ -175,3 +175,35 @@ ul {
   text-align: center;
   color: #6b7280;
 }
+
+.details-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.details-meta {
+  margin-bottom: 16px;
+  color: #6b7280;
+}
+
+.details-description {
+  max-width: 720px;
+  margin-bottom: 24px;
+  white-space: pre-line;
+}
+
+.details-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-danger {
+  background: #b91c1c;
+}
+
+.btn-danger:hover {
+  background: #7f1d1d;
+}
