@@ -149,3 +149,29 @@ ul {
   cursor: pointer;
   font: inherit;
 }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filters input,
+.filters select {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.filters input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.status-message {
+  margin: 24px 0;
+  text-align: center;
+  color: #6b7280;
+}
