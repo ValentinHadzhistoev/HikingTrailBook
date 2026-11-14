@@ -1,30 +1,56 @@
-import Hero from '../components/Hero'
-import TrailCard from '../components/TrailCard'
-
-// TEMPORARY sample data, replaced by API data later
-const sample = [1, 2, 3, 4].map((n) => ({
-  _id: String(n),
-  name: `Sample Trail ${n}`,
-  location: 'Rila, Bulgaria',
-  difficulty: 'Medium',
-  length: 10 + n,
-  imageUrl: `https://picsum.photos/seed/trail${n}/600/400`,
-}))
+import { useEffect, useState } from "react";
+import Hero from "../components/Hero";
+import TrailCard from "../components/TrailCard";
+import * as trailsApi from "../api/trails";
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <section className="section section-light">
-        <div className="container">
-          <h2 className="section-title">Latest Trails</h2>
-          <div className="card-grid">
-            {sample.map((trail) => (
-              <TrailCard key={trail._id} trail={trail} />
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  )
+    const [trails, setTrails] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
+
+    useEffect(() => {
+        let ignore = false;
+
+        trailsApi
+            .getAll()
+            .then((result) => {
+                if (!ignore) setTrails(result.slice(0, 4));
+            })
+            .catch((err) => {
+                if (!ignore) setError(err.message || "Could not load trails.");
+            })
+            .finally(() => {
+                if (!ignore) setLoading(false);
+            });
+
+        return () => {
+            ignore = true;
+        };
+    }, []);
+    return (
+        <>
+            <Hero />
+            <section className="section section-light">
+                <div className="container">
+                    <h2 className="section-title">Latest Trails</h2>
+
+                    {loading && (
+                        <p className="status-message">Loading trails...</p>
+                    )}
+                    {error && <p className="form-error">{error}</p>}
+                    {!loading && !error && trails.length === 0 && (
+                        <p className="status-message">
+                            No trails yet. Be the first to add one!
+                        </p>
+                    )}
+
+                    <div className="card-grid">
+                        {trails.map((trail) => (
+                            <TrailCard key={trail._id} trail={trail} />
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
+    );
 }
