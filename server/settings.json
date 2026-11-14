@@ -21,6 +21,29 @@
         "sessions": {}
     },
     "seedData": {
+                "trails": {
+            "6b0f1c2e-0001-4a1b-9c10-aa0000000001": {
+                "_ownerId": "demo-owner",
+                "_createdOn": 1731400000001,
+                "name": "Seven Rila Lakes",
+                "location": "Rila, Bulgaria",
+                "difficulty": "Medium",
+                "length": 12,
+                "imageUrl": "https://picsum.photos/seed/rilalakes/600/400",
+                "description": "A classic loop past seven glacial lakes with wide views over the Rila mountains."
+            },
+            "6b0f1c2e-0002-4a1b-9c10-aa0000000002": {
+                "_ownerId": "demo-owner",
+                "_createdOn": 1731400000002,
+                "name": "Cherni Vrah villa Aleko",
+                "location": "Vitosha, Bulgaria",
+                "difficulty": "Easy",
+                "length": 9,
+                "imageUrl": "https://picsum.photos/seed/vitosha/600/400",
+                "description": "A gentle walk to the highest peak of Vitosha, good for beginners and families."
+            }
+        },
+        "likes": {},
         "recipes": {
             "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
