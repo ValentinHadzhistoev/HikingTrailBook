@@ -21,7 +21,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const { isAuthenticated, logoutHandler } = useAuth()
+  const { isAuthenticated, email, logoutHandler } = useAuth()
   const isHome = pathname === '/'
   const links = isAuthenticated ? userLinks : guestLinks
 
@@ -55,11 +55,17 @@ export default function Navbar() {
               </NavLink>
             </li>
           ))}
+           
           {isAuthenticated && (
             <li>
               <button type="button" className="navbar-logout" onClick={onLogout}>
                 Logout
               </button>
+            </li>
+          )}
+          {isAuthenticated && (
+            <li className="navbar-user" title={email}>
+              {email?.split('@')[0]}
             </li>
           )}
         </ul>

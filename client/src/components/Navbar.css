@@ -91,3 +91,7 @@
 .navbar-logout:hover {
   color: #86efac;
 }
+.navbar-user {
+  color: #86efac;
+  font-weight: 600;
+}
