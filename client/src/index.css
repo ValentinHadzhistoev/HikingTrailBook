@@ -207,3 +207,47 @@ ul {
 .btn-danger:hover {
   background: #7f1d1d;
 }
+
+.likes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.likes-note {
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.comments {
+  max-width: 720px;
+  margin-top: 40px;
+}
+
+.comments h2 {
+  margin-bottom: 16px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.comment {
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}

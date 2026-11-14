@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import * as trailsApi from "../api/trails";
+import LikeButton from '../components/LikeButton'
+import Comments from '../components/Comments'
 
 export default function Details() {
     const { trailId } = useParams();
@@ -80,6 +82,8 @@ export default function Details() {
 
             <p className="details-description">{trail.description}</p>
 
+             <LikeButton trailId={trailId} ownerId={trail._ownerId} />
+
             {error && <p className="form-error">{error}</p>}
 
             {isOwner && (
@@ -96,6 +100,7 @@ export default function Details() {
                     </button>
                 </div>
             )}
+            <Comments trailId={trailId} />
         </section>
     );
 }
