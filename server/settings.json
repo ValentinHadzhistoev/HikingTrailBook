@@ -29,17 +29,17 @@
                 "location": "Rila, Bulgaria",
                 "difficulty": "Medium",
                 "length": 12,
-                "imageUrl": "https://picsum.photos/seed/rilalakes/600/400",
+                "imageUrl": "https://freesofiatour.com/wp-content/uploads/2018/05/seven-rila-lakes-how-to-get-to-1200x675.jpeg",
                 "description": "A classic loop past seven glacial lakes with wide views over the Rila mountains."
             },
             "6b0f1c2e-0002-4a1b-9c10-aa0000000002": {
                 "_ownerId": "demo-owner",
                 "_createdOn": 1731400000002,
-                "name": "Cherni Vrah villa Aleko",
+                "name": "Cherni Vruh villa Aleko",
                 "location": "Vitosha, Bulgaria",
                 "difficulty": "Easy",
                 "length": 9,
-                "imageUrl": "https://picsum.photos/seed/vitosha/600/400",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Vitosha_seen_from_the_center_of_Sofia.jpg?utm_source=bg.wikipedia.org&utm_campaign=index&utm_content=original",
                 "description": "A gentle walk to the highest peak of Vitosha, good for beginners and families."
             }
         },

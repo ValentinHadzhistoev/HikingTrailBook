@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AuthContext from './AuthContext'
 import * as authApi from '../api/auth'
+import { AUTH_EXPIRED_EVENT } from '../api/requester'
 
 function loadAuth() {
   try {
@@ -12,6 +13,13 @@ function loadAuth() {
 
 export default function AuthProvider({ children }) {
   const [auth, setAuth] = useState(loadAuth)
+
+  useEffect(() => {
+    const handleExpired = () => setAuth(null)
+
+    window.addEventListener(AUTH_EXPIRED_EVENT, handleExpired)
+    return () => window.removeEventListener(AUTH_EXPIRED_EVENT, handleExpired)
+  }, [])
 
   const saveAuth = (data) => {
     setAuth(data)
@@ -36,6 +44,8 @@ export default function AuthProvider({ children }) {
   const logoutHandler = async () => {
     try {
       await authApi.logout()
+    } catch {
+      // The session is cleared below whether or not the server still knew it
     } finally {
       clearAuth()
     }
